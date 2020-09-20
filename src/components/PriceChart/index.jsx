@@ -94,7 +94,7 @@ function PriceChart() {
       </HeaderPrice>
       <Container>
         <VictoryChart
-          height={230}
+          height={200}
           width={920}
           domainPadding={{ x: 15 }}
           containerComponent={<VictoryContainer responsive />}
