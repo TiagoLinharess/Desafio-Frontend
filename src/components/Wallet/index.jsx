@@ -220,6 +220,21 @@ function LastSearches() {
   }
 
   function addSubtractCompanyChart(data) {
+    console.log(data.newCharts);
+    if (data.newCharts < 0) {
+      toast.error('Não é possível comprar ou vender ações com números negativos.', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      buySellCondition.splice(0, 1);
+      setBuySellCondition([...buySellCondition, false]);
+      return;
+    }
     if (cardKey[0]) {
       let charts = parseInt(data.newCharts);
       if (!charts) {

@@ -8,6 +8,11 @@ export const Container = styled.div`
   background: #FFF;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+  overflow: hidden;
+
+  @media (max-height: 880px) { 
+    height: 300px;
+  }
 
   @media (max-width: 900px) {    
     height: 13vh;
@@ -44,6 +49,11 @@ export const HeaderPrice = styled.div`
 
     
   }
+
+  @media (max-height: 820px) {    
+    height: 50px; 
+  }
+
   @media (max-width: 900px) {    
     height: 12vh;
     margin-top: 12px;

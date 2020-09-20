@@ -53,6 +53,10 @@ export const Container = styled.div`
     }
   }
 
+  @media (max-width: 1360px) {    
+    height: 75px; 
+  }
+
   @media (max-width: 900px) {    
     height: 12vh; 
   }
