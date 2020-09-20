@@ -220,7 +220,6 @@ function LastSearches() {
   }
 
   function addSubtractCompanyChart(data) {
-    console.log(data.newCharts);
     if (data.newCharts < 0) {
       toast.error('Não é possível comprar ou vender ações com números negativos.', {
         position: 'top-center',
@@ -236,9 +235,20 @@ function LastSearches() {
       return;
     }
     if (cardKey[0]) {
-      let charts = parseInt(data.newCharts);
+      const charts = parseInt(data.newCharts);
       if (!charts) {
-        charts = 1;
+        toast.error('Por favor preencha todos os campos.', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        buySellCondition.splice(0, 1);
+        setBuySellCondition([...buySellCondition, false]);
+        return;
       }
       const existCard = (createCard.findIndex((card) => card.name === cardKey[0]));
       const storageCards = localStorage.getItem(
@@ -266,9 +276,20 @@ function LastSearches() {
       handleSaveBuyAndSell(charts, cardKey[0]);
       setCreateCard([...createCard, editedCard]);
     } else {
-      let charts = parseInt(data.newCharts);
+      const charts = parseInt(data.newCharts);
       if (!charts) {
-        charts = 1;
+        toast.error('Por favor preencha todos os campos.', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        buySellCondition.splice(0, 1);
+        setBuySellCondition([...buySellCondition, false]);
+        return;
       }
       const existCard = (createCard.findIndex((card) => card.name === cardKeySubtract[0]));
       const storageCards = localStorage.getItem(
