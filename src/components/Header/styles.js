@@ -53,7 +53,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 1360px) {    
+  @media (max-width: 1366px) {    
     height: 75px; 
   }
 

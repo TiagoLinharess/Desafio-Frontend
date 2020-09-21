@@ -106,6 +106,10 @@ export const List = styled.div`
   }
   }
 
+  @media (max-height: 769px) { 
+    margin-bottom: 50px;
+  }
+
   @media (max-width: 900px) {    
     width: 150%;
     padding-bottom: 50px;
