@@ -9,7 +9,7 @@ import {
   CalendarAlt,
   People,
   Gear,
-  Close
+  Close,
 } from '../../styles/icons';
 
 export const SearchIcon = styled(Search)`
@@ -158,5 +158,16 @@ export const LeftMenu = styled.ul`
     list-style-type: none;
 
     color: #c2c2c2;
+  }
+
+  @media (max-width: 458px) {
+    margin-right: -80px;
+    z-index: 2;
+
+    &:hover {
+      background: #5636d3;
+      cursor: pointer;
+      height: 750px;
+    }
   }
 `;
